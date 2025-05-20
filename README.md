@@ -23,58 +23,6 @@ The primary users would be individuals who want to sort their waste correctly bu
 import pandas as pd
 import pandas as pd
 
-def classify_plastic_item(item_name):
-    """
-    Simulates a basic plastic waste classification based on common item types.
-    This is a highly simplified example, not an actual AI model.
-    The recyclability status is based on general knowledge, which varies by region.
-    """
-
-    # Data inspired by common plastic items discussed in "Our Plastic Earth" context
-    # In a real application, this would be a large, trained dataset.
-    plastic_items_data = {
-        "PET bottle": {"type": "Plastic #1 (PET)", "recyclable": True, "notes": "Widely recyclable, often found in water bottles, soda bottles."},
-        "HDPE milk jug": {"type": "Plastic #2 (HDPE)", "recyclable": True, "notes": "Widely recyclable, commonly used for milk jugs, detergent bottles."},
-        "plastic bag": {"type": "Plastic #4 (LDPE)", "recyclable": False, "notes": "Often not accepted in curbside recycling; requires special drop-off."},
-        "yogurt container": {"type": "Plastic #5 (PP)", "recyclable": True, "notes": "Becoming more widely recyclable, check local guidelines."},
-        "styrofoam cup": {"type": "Plastic #6 (PS)", "recyclable": False, "notes": "Rarely recyclable curbside; often sent to landfill."},
-        "plastic cutlery": {"type": "Plastic #6 (PS)", "recyclable": False, "notes": "Small and often made of unrecyclable plastic; typically landfill."},
-        "food wrapper": {"type": "Mixed Plastics/Multi-layer", "recyclable": False, "notes": "Often difficult to recycle due to mixed materials."},
-        "PVC pipe": {"type": "Plastic #3 (PVC)", "recyclable": False, "notes": "Not typically accepted in curbside recycling."},
-        "clamshell container": {"type": "Mixed Plastics/PET/PS", "recyclable": False, "notes": "Often problematic due to mixed materials or different plastic types."},
-        "plastic film": {"type": "Mixed Plastics/LDPE", "recyclable": False, "notes": "Similar to plastic bags, usually requires special drop-off."},
-        "shampoo bottle": {"type": "Plastic #2 (HDPE)", "recyclable": True, "notes": "Check for pumps/lids, usually recyclable after rinsing."},
-        "straw": {"type": "Plastic #5 (PP) or #6 (PS)", "recyclable": False, "notes": "Too small to be sorted, typically landfill."},
-        "disposable coffee cup lid": {"type": "Plastic #6 (PS)", "recyclable": False, "notes": "Often made of unrecyclable plastic, usually landfill."},
-    }
-
-    item_name_lower = item_name.lower()
-
-    if item_name_lower in plastic_items_data:
-        data = plastic_items_data[item_name_lower]
-        print(f"\n--- Item Classification: {item_name.title()} ---")
-        print(f"Plastic Type: {data['type']}")
-        print(f"Recyclable: {'Yes' if data['recyclable'] else 'No'}")
-        print(f"Notes: {data['notes']}")
-        if not data['recyclable']:
-            print("Action: Consider alternatives or proper disposal methods.")
-    else:
-        print(f"\n--- Item Classification: {item_name.title()} ---")
-        print("Information not found for this specific plastic item.")
-        print("Please check local recycling guidelines or consider if it's general waste.")
-
-def main():
-    print("Welcome to the Plastic Waste Classifier (Simplified)! 👋")
-    print("This tool provides basic information on common plastic items and their recyclability.")
-    print("Remember: Local recycling rules vary!")
-
-    while True:
-        item = input("\nEnter a plastic item (e.g., 'PET bottle', 'plastic bag', 'yogurt container', 'styrofoam cup', 'food wrapper', 'straw'): ").strip()
-        if not item:
-            print("Please enter an item name.")
-            continue
-        if item.lower() == 'quit':
-            print("Exiting the classifier. Thank you for thinking about sustainability!")
             break
 
         classify_plastic_item(item)
