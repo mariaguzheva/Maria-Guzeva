@@ -21,6 +21,7 @@ This solution is needed in various environments:
 
 The primary users would be individuals who want to sort their waste correctly but lack the knowledge or time to research each item. The app needs to be user-friendly, fast, and provide clear, unambiguous recommendations. It should also account for varying local recycling guidelines.
 import pandas as pd
+import pandas as pd
 
 def classify_plastic_item(item_name):
     """
@@ -80,9 +81,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    else:
-        return "General Waste"
-
-# Example usage (hypothetical input features)
-# print(classify_waste_item(["plastic", "bottle", "empty"]))
-# print(classify_waste_item(["banana_peel", "organic"]))
